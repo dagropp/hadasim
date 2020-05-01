@@ -1,0 +1,121 @@
+{
+  "sculptures": [
+    {
+      "title": "Test1",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, corporis culpa distinctio error est excepturi ipsa minus non porro provident quas vitae! Ab aperiam assumenda exercitationem impedit modi repudiandae.",
+      "date": "2015-08",
+      "media": [
+        {
+          "src": "/assets/images/sculptures/VGVzdDE01",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/sculptures/VGVzdDE02",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/assets/images/sculptures/VGVzdDE03",
+          "orientation": "portrait"
+        }
+      ]
+    },
+    {
+      "title": "Test2",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, corporis culpa distinctio error est excepturi ipsa minus non porro provident quas vitae! Ab aperiam assumenda exercitationem impedit modi repudiandae.",
+      "date": "2019-07",
+      "media": [
+        {
+          "src": "/assets/images/sculptures/VGVzdDI01",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/assets/images/sculptures/VGVzdDI03",
+          "orientation": "portrait"
+        }
+      ]
+    },
+    {
+      "title": "Test3",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, corporis culpa distinctio error est excepturi ipsa minus non porro provident quas vitae! Ab aperiam assumenda exercitationem impedit modi repudiandae.",
+      "date": "2020-03",
+      "media": [
+        {
+          "src": "/assets/images/sculptures/VGVzdDM01",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/assets/images/sculptures/VGVzdDM02",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/sculptures/VGVzdDM03",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/sculptures/VGVzdDM04",
+          "orientation": "landscape"
+        }
+      ]
+    }
+  ],
+  "paintings": [
+    {
+      "title": "J. M. W. Turner",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, corporis culpa distinctio error est excepturi ipsa minus non porro provident quas vitae! Ab aperiam assumenda exercitationem impedit modi repudiandae.",
+      "date": "1851-01",
+      "media": [
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMg01",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMg02",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMg03",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMg04",
+          "orientation": "portrait"
+        }
+      ]
+    },
+    {
+      "title": "Claude Monet",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, corporis culpa distinctio error est excepturi ipsa minus non porro provident quas vitae! Ab aperiam assumenda exercitationem impedit modi repudiandae.",
+      "date": "1840-01",
+      "media": [
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMQ01",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMQ02",
+          "orientation": "portrait"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMQ03",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMQ04",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMQ05",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMQ06",
+          "orientation": "landscape"
+        },
+        {
+          "src": "/assets/images/paintings/UGFpbnRpbmdzMQ07",
+          "orientation": "landscape"
+        }
+      ]
+    }
+  ]
+}
