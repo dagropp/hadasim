@@ -1,58 +1,63 @@
-import React, {useEffect, useState} from "react";
-import PropTypes from "prop-types";
-import ImageModal from "./ImageModal";
-import {isInitialized, testBrowser, testDevice, testFeature} from "../../common/utils";
+import React from "react";
 import ImageZoom from "./ImageZoom";
+import ImageModal from "./ImageModal";
+import {isInitialized, testBrowser, testDevice, testFeature} from "common/utils";
+import PropTypes from "prop-types";
 
-const ImageGallery = props => {
-    const [gallery, setGallery] = useState([]);
-    const [modalPosition, setModalPosition] = useState(null);
-    const isMSBrowser = testBrowser("edge");
-    const isMobileDevice = testDevice("tablet.landscape", "tablet.portrait", "phone");
-    const showImageZoom = (isMSBrowser || isMobileDevice) ? false : testFeature({name: "zoom", default: true});
-    const showModal = testFeature({name: "modal", default: true});
+class ImageGallery extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalPosition: null
+        };
 
-    useEffect(() => {
-        let gallery = [];
-        for (const item of props.items) {
-            const title = item.title;
-            const subtitle = item.subtitle;
-            const date = item.date;
-            for (const image of item.media) {
-                const imageSrc = image.src;
-                const webp = {small: `${imageSrc}=small.webp`, large: `${imageSrc}=large.webp`}
-                const jpg = {small: `${imageSrc}=small.jpg`, large: `${imageSrc}=large.jpg`};
-                const orientation = image.orientation;
-                gallery.push({title, subtitle, date, webp, jpg, orientation})
-            }
-        }
-        setGallery(gallery)
-    }, [props.items])
+        this.isMSBrowser = testBrowser("edge");
+        this.isMobileDevice = testDevice("tablet.landscape", "tablet.portrait", "phone");
+        this.showImageZoom = (this.isMSBrowser || this.isMobileDevice)
+            ? false
+            : testFeature({name: "zoom", default: true});
+        this.showModal = testFeature({name: "modal", default: true});
+    }
 
-    return <div className="image-gallery">
-        {isInitialized(gallery) && gallery.map((image, index) =>
-            <div className={`image-wrapper ${image.orientation}`}
-                 key={index}
-                 onClick={setModalPosition.bind(this, index)}>
-                {showImageZoom
-                    ? <ImageZoom image={image}/>
-                    : <picture className="image-container">
-                        <source srcSet={image.webp.small}/>
-                        <source srcSet={image.jpg.small}/>
-                        <img className="gallery-image" src={image.jpg.small} alt={image.title}/>
-                    </picture>
-                }
-            </div>
-        )}
+    setModalPosition(position) {
+        this.setState({modalPosition: position})
+    }
 
-        {showModal && isInitialized(modalPosition) &&
-        <ImageModal gallery={gallery} position={modalPosition} setPosition={setModalPosition}/>}
-    </div>
+    render() {
+        const {projects, gallery} = this.props;
+        const {modalPosition} = this.state;
+
+        return <div className="image-gallery">
+            {gallery.map((image, index) =>
+                <div className={`image-wrapper ${image.orientation}`}
+                     key={index}
+                     onClick={this.setModalPosition.bind(this, index)}>
+                    {this.showImageZoom
+                        ? <ImageZoom image={image}/>
+                        : <picture className="image-container">
+                            <source srcSet={image.src + "=small.webp"}/>
+                            <source srcSet={image.src + "=small.jpg"}/>
+                            <img className="gallery-image"
+                                 src={image.src + "=small.jpg"}
+                                 alt={projects[image.projectID].title}/>
+                        </picture>
+                    }
+                </div>
+            )}
+
+            {this.showModal && isInitialized(modalPosition) &&
+            <ImageModal projects={projects}
+                        gallery={gallery}
+                        position={modalPosition}
+                        setPosition={this.setModalPosition.bind(this)}/>}
+        </div>
+    }
 
 }
 
 ImageGallery.propTypes = {
-    items: PropTypes.array
+    projects: PropTypes.object,
+    gallery: PropTypes.array
 };
 
 export default ImageGallery;

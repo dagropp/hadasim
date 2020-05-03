@@ -67,3 +67,16 @@ export function testFeature(testedFeature) {
         return features;
     }
 }
+
+export function setData(state, path) {
+    let result = {};
+    fetchData().then(data => {
+        result[state] = data;
+        this.setState(result);
+    })
+
+    async function fetchData() {
+        let request = await fetch(path);
+        return await request.json();
+    }
+}

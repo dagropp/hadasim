@@ -1,57 +1,65 @@
-import React, {useEffect} from "react";
+import React from "react";
+import {parseDate, parsePlaces} from "common/project_utils";
 import PropTypes from "prop-types";
 
-function ImageModal(props) {
-    let position = props.position;
-    let image = props.gallery[position];
-    const gallery = props.gallery;
-    const setPosition = props.setPosition;
-    const scrollPosition = window.pageYOffset;
-    useEffect(() => {
-        window.addEventListener("scroll", disableScroll, true);
-        return () => {
-            window.removeEventListener("scroll", disableScroll, true);
-        }
-
-        function disableScroll() {
-            window.scrollTo(0, scrollPosition)
-        }
-    }, [scrollPosition])
-
-    function close() {
-        setPosition(null)
+class ImageModal extends React.Component {
+    constructor(props) {
+        super(props);
+        this.close = this.close.bind(this);
+        this.next = this.next.bind(this);
+        this.prev = this.prev.bind(this);
     }
 
-    function next() {
-        let next = (position + 1) % gallery.length;
-        setPosition(next)
+    componentDidMount() {
+        document.body.classList.add("lightbox-on");
     }
 
-    function prev() {
-        let prev = position === 0
-            ? gallery.length - 1
-            : position - 1;
-        setPosition(prev)
+    componentWillUnmount() {
+        document.body.classList.remove("lightbox-on");
     }
 
-    return <div className={`image-modal ${image.orientation}`}>
-        <div className="backdrop" onClick={close}></div>
-        <picture onClick={next}>
-            <source srcSet={image.webp.large}/>
-            <source srcSet={image.jpg.large}/>
-            <img src={image.jpg.large} alt={image.title}/>
-        </picture>
-        <div className="description">
-            <h3>{image.title}</h3>
-            <p>{image.subtitle}</p>
+    close() {
+        this.props.setPosition(null)
+    }
+
+    next() {
+        let next = (this.props.position + 1) % this.props.gallery.length;
+        this.props.setPosition(next)
+    }
+
+    prev() {
+        let prev = this.props.position === 0
+            ? this.props.gallery.length - 1
+            : this.props.position - 1;
+        this.props.setPosition(prev)
+    }
+
+    render() {
+        let position = this.props.position;
+        let image = this.props.gallery[position];
+        let project = this.props.projects[image.projectID];
+
+        return <div className={`image-modal ${image.orientation}`}>
+            <div className="backdrop" onClick={this.close}></div>
+            <picture onClick={this.next}>
+                <source srcSet={image.src + "=large.webp"}/>
+                <source srcSet={image.src + "=large.jpg"}/>
+                <img src={image.src + "=large.jpg"} alt={image.title}/>
+            </picture>
+            <div className="description">
+                <h3>{project.title} / {parseDate(project.date)} / {parsePlaces(project.places)}</h3>
+                <p>{project.description}</p>
+            </div>
+            <div className="next" onClick={this.next}><i className="icon-next"></i></div>
+            <div className="prev" onClick={this.prev}><i className="icon-prev"></i></div>
+            <div className="close" onClick={this.close}>×</div>
         </div>
-        <div className="next" onClick={next}><i className="icon-next"></i></div>
-        <div className="prev" onClick={prev}><i className="icon-prev"></i></div>
-        <div className="close" onClick={close}>×</div>
-    </div>
+    }
+
 }
 
 ImageModal.propTypes = {
+    projects: PropTypes.object,
     gallery: PropTypes.array,
     position: PropTypes.number,
     setPosition: PropTypes.func

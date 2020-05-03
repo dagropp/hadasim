@@ -1,6 +1,6 @@
 import React from "react";
-import {isInitialized} from "../../common/utils";
 import EmbeddedVideo from "./EmbeddedVideo";
+import {isInitialized} from "common/utils";
 
 function VideoGallery(props) {
     const videos = props.videos;

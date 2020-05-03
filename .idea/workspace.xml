@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="785468ea-5a30-4c24-bf99-057d9d77c681" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+    <list default="true" id="785468ea-5a30-4c24-bf99-057d9d77c681" name="Default Changelist" comment="First commit. Main site front-end completed, awaiting design changes.">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/gallery.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/project_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectID.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/style/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/main.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/style/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/custom-hooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/custom-hooks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/admin/DateInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/admin/project/DateInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/admin/EditProject.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/images/ImageGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/images/ImageGallery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/images/ImageModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/images/ImageModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/images/ImageZoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/images/ImageZoom.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/AppHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/AppHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/BackToTopButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/BackToTopButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/HomeExhibit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/HomeExhibit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Paintings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Paintings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/ProjectsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/ProjectsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Sculptures.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Sculptures.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Videos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Videos.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/videos/VideoGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/videos/VideoGallery.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +49,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,10 +69,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\hadasim\src\react-component\admin\project" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -47,11 +91,60 @@
       <option name="presentableId" value="Default" />
       <updated>1588316032402</updated>
       <workItem from="1588316036338" duration="1390000" />
-      <workItem from="1588332351894" duration="300000" />
+      <workItem from="1588332351894" duration="2500000" />
+      <workItem from="1588406434215" duration="2800000" />
+      <workItem from="1588423614097" duration="4827000" />
+      <workItem from="1588428673801" duration="125000" />
+      <workItem from="1588490930329" duration="9595000" />
     </task>
+    <task id="LOCAL‎00001" summary="First commit. Main site front-end completed, awaiting design changes.">
+      <created>1588332862317</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1588332862317</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit. Main site front-end completed, awaiting design changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit. Main site front-end completed, awaiting design changes." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1186" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588501150288">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1186" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588501150288" />
+    <state x="-1291" y="307" key="EditFileWatcherDialog" timestamp="1588500559446">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1291" y="307" key="EditFileWatcherDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588500559446" />
+    <state x="-1368" y="262" key="Vcs.Push.Dialog.v2" timestamp="1588332874615">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588332874615" />
+    <state x="-1159" y="435" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1588332783646">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1159" y="435" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588332783646" />
+    <state x="-1297" y="234" width="672" height="678" key="search.everywhere.popup" timestamp="1588425332296">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1297" y="234" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588425332296" />
   </component>
 </project>

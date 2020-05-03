@@ -1,18 +1,19 @@
 import {useState, useEffect, useRef} from "react";
 import {isInitialized} from "./utils";
 
-export function useData(path) {
-    const [data, setData] = useState([]);
+export function useData(path, initial = {}) {
+    const [data, setData] = useState(initial);
 
     useEffect(() => {
         fetchData(path)
-            .then(data => setData(data));
+            .then(data => setData(data))
+            .catch(error => setData(initial));
 
         async function fetchData(path) {
             let request = await fetch(path);
             return await request.json();
         }
-    }, [path]);
+    }, [path, initial]);
 
     return data;
 }

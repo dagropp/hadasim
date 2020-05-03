@@ -1,15 +1,27 @@
 import React from "react";
-import VideoGallery from "../videos/VideoGallery";
-import {useData} from "../../common/custom-hooks";
-import {isInitialized} from "../../common/utils";
+import VideoGallery from "react-component/videos/VideoGallery";
+import {isInitialized, setData} from "common/utils";
 
-function Videos(props) {
-    const videos = useData("/data/videos.json");
+class Videos extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            videos: []
+        }
+    }
 
-    return <section className="videos flex-col-centered" id="video">
-        <h2>Videos</h2>
-        {isInitialized(videos) && <VideoGallery videos={videos}/>}
-    </section>
+    componentDidMount() {
+        setData.call(this, "videos", "/data/videos.json");
+    }
+
+    render() {
+        const {videos} = this.state;
+
+        return <section className="videos flex-col-centered" id="video">
+            <h2>Videos</h2>
+            {isInitialized(videos) && <VideoGallery videos={videos}/>}
+        </section>
+    }
 }
 
 export default Videos;

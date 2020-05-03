@@ -1,22 +1,22 @@
-import ReactImageMagnify from "react-image-magnify";
 import React from "react";
+import ReactImageMagnify from "react-image-magnify";
 
 function ImageZoom(props) {
     const image = props.image;
 
     const smallImage = {
-        src: image.jpg.small,
-        srcSet: image.webp.small,
+        src: image.src + "=small.jpg",
+        srcSet: image.src + "=small.webp",
         isFluidWidth: true,
-        alt: image.title,
+        alt: "",
     }
 
     const largeImage = {
-        src: image.jpg.large,
-        srcSet: image.webp.large,
+        src: image.src + "=large.jpg",
+        srcSet: image.src + "=large.webp",
         width: image.orientation === "landscape" ? 750 : 500,
         height: image.orientation === "landscape" ? 500 : 750,
-        alt: image.title,
+        alt: "image.title",
     }
 
     return <ReactImageMagnify smallImage={smallImage}

@@ -47,6 +47,21 @@ body {
   color: white;
   font-size: 14px;
 }
+body.lightbox-on {
+  overflow: hidden;
+  padding-right: 17px;
+}
+body.lightbox-on header.app-header {
+  padding-right: 17px;
+}
+@media only screen and (max-width: 1024px) {
+  body.lightbox-on {
+    padding-right: 0;
+  }
+  body.lightbox-on header.app-header {
+    padding-right: 0;
+  }
+}
 
 h1, h2 {
   text-transform: uppercase;

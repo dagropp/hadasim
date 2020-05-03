@@ -1,6 +1,6 @@
 import React from "react";
-import {Link as ScrollLink} from "react-scroll";
 import BackToTopButton from "./BackToTopButton";
+import {Link as ScrollLink} from "react-scroll";
 
 function AppHeader(props) {
     const scrollSettings = {

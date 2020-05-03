@@ -6,7 +6,6 @@ function HomeExhibit(props) {
         try {
             await video.play();
         } catch (e) {
-            console.log(e.message);
             video.controls = true;
         }
     }
