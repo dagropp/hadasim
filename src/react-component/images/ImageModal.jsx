@@ -1,65 +1,72 @@
-import React from "react";
-import {parseDate, parsePlaces} from "common/project_utils";
+import React, {useEffect} from "react";
 import PropTypes from "prop-types";
+import LocalVideo from "react-component/videos/LocalVideo";
+import NextIcon from "react-component/icons/NextIcon";
+import PrevIcon from "react-component/icons/PrevIcon";
+import CloseIcon from "react-component/icons/CloseIcon";
+import LightBox from "react-component/display/LightBox";
 
-class ImageModal extends React.Component {
-    constructor(props) {
-        super(props);
-        this.close = this.close.bind(this);
-        this.next = this.next.bind(this);
-        this.prev = this.prev.bind(this);
+/**
+ * Component of a pop-up image gallery.
+ */
+function ImageModal(props) {
+    const {gallery, position, setPosition} = props;
+    const image = gallery[position];
+
+    useEffect(() => {
+        // Sets functions for different keys
+        document.onkeydown = event => {
+            const {key} = event;
+            const actions = {ArrowRight: next, ArrowLeft: prev, Escape: close};
+            actions[key] && actions[key]();
+        };
+        return () => document.onkeydown = null;
+    });
+
+    /**
+     * Close image modal, by setting position to null.
+     */
+    function close() {
+        setPosition(null);
     }
 
-    componentDidMount() {
-        document.body.classList.add("lightbox-on");
+    /**
+     * Going to next position in image modal.
+     */
+    function next() {
+        const next = (position + 1) % gallery.length;
+        setPosition(next);
     }
 
-    componentWillUnmount() {
-        document.body.classList.remove("lightbox-on");
+    /**
+     * Going to previous position in image modal.
+     */
+    function prev() {
+        const prev = position === 0 ? gallery.length - 1 : position - 1;
+        setPosition(prev);
     }
 
-    close() {
-        this.props.setPosition(null)
-    }
-
-    next() {
-        let next = (this.props.position + 1) % this.props.gallery.length;
-        this.props.setPosition(next)
-    }
-
-    prev() {
-        let prev = this.props.position === 0
-            ? this.props.gallery.length - 1
-            : this.props.position - 1;
-        this.props.setPosition(prev)
-    }
-
-    render() {
-        let position = this.props.position;
-        let image = this.props.gallery[position];
-        let project = this.props.projects[image.projectID];
-
-        return <div className={`image-modal ${image.orientation}`}>
-            <div className="backdrop" onClick={this.close}></div>
-            <picture onClick={this.next}>
-                <source srcSet={image.src + "=large.webp"}/>
-                <source srcSet={image.src + "=large.jpg"}/>
-                <img src={image.src + "=large.jpg"} alt={image.title}/>
-            </picture>
-            <div className="description">
-                <h3>{project.title} / {parseDate(project.date)} / {parsePlaces(project.places)}</h3>
-                <p>{project.description}</p>
+    return <LightBox className={`image-modal ${image.orientation}`}>
+        <div className="backdrop" onClick={close}/>
+        <div className="image-wrapper">
+            <div className="title">
+                <h2>{image.title}</h2>
+                {image.credits && <p>Photo by {image.credits}</p>}
             </div>
-            <div className="next" onClick={this.next}><i className="icon-next"></i></div>
-            <div className="prev" onClick={this.prev}><i className="icon-prev"></i></div>
-            <div className="close" onClick={this.close}>×</div>
+            {image.type === "image"
+                ? <img src={image.src + "=medium.jpg"} alt={image.title} onClick={next}/>
+                : <LocalVideo src={image.src} autoplay={true} onClick={next}/>
+            }
         </div>
-    }
-
+        <div className="actions flex-row-centered">
+            <PrevIcon onClick={prev}/>
+            <NextIcon onClick={next}/>
+            <CloseIcon onClick={close}/>
+        </div>
+    </LightBox>
 }
 
 ImageModal.propTypes = {
-    projects: PropTypes.object,
     gallery: PropTypes.array,
     position: PropTypes.number,
     setPosition: PropTypes.func

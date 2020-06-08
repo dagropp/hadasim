@@ -1,22 +1,22 @@
 import React from "react";
 import ReactImageMagnify from "react-image-magnify";
 
+/**
+ * Component of image zoom lens.
+ */
 function ImageZoom(props) {
     const image = props.image;
-
+    const largeImageBase = image.orientation === "landscape" ? 900 : 1200;
     const smallImage = {
         src: image.src + "=small.jpg",
-        srcSet: image.src + "=small.webp",
         isFluidWidth: true,
-        alt: "",
+        alt: image.title
     }
-
     const largeImage = {
         src: image.src + "=large.jpg",
-        srcSet: image.src + "=large.webp",
-        width: image.orientation === "landscape" ? 750 : 500,
-        height: image.orientation === "landscape" ? 500 : 750,
-        alt: "image.title",
+        height: largeImageBase,
+        width: largeImageBase * image.ratio,
+        alt: `Zoom-in for '${image.title}'`,
     }
 
     return <ReactImageMagnify smallImage={smallImage}
@@ -25,7 +25,7 @@ function ImageZoom(props) {
                               imageClassName="gallery-image"
                               enlargedImageContainerClassName="image-large-container"
                               enlargedImageClassName="image-large"
-                              enlargedImageContainerDimensions={{height: 350, width: 350}}/>
+                              enlargedImagePosition="over"/>
 }
 
 export default ImageZoom;

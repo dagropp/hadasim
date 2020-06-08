@@ -1,50 +1,56 @@
 import React from "react";
 import AppHeader from "./AppHeader";
-import HomeExhibit from "./HomeExhibit";
-import Sculptures from "./Sculptures";
-import Paintings from "./Paintings";
-import Videos from "./Videos";
+import MainExhibit from "./MainExhibit";
 import Contact from "./Contact";
 import ProjectsList from "./ProjectsList";
 import Legal from "./Legal";
-import {isInitialized, setData, testDevice} from "common/utils";
-import {Link} from "react-router-dom";
+import {isInitialized, testDevice} from "common/app_utils";
+import {setData} from "common/server_utils";
+import Gallery from "./Gallery";
+import SectionGifAnimation from "react-component/display/SectionGifAnimation";
 
+/**
+ * Main site component.
+ */
 class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             projects: {},
-            gallery: {}
+            gallery: [],
+            info: {}
         }
-        this.isPhone = testDevice("phone");
+        this.setData = setData.bind(this);
     }
 
     componentDidMount() {
-        setData.call(this, "projects", "/data/projects.json");
-        setData.call(this, "gallery", "/data/gallery.json");
+        // Sets all data JSON's to state
+        this.setData("projects");
+        this.setData("gallery");
+        this.setData("info");
     }
 
     render() {
-        const {projects, gallery} = this.state;
+        const {projects, gallery, info} = this.state;
+        const isPhone = testDevice("phone", "tablet.portrait");
 
         return <>
-            <AppHeader isPhone={this.isPhone}/>
+            {isInitialized(gallery) && <AppHeader title={info.name} gallery={gallery} isPhone={isPhone}/>}
             <main className="app-wrapper">
-                <HomeExhibit isPhone={this.isPhone}/>
-                {isInitialized(projects) && isInitialized(gallery) && <>
-                    <Sculptures projects={projects} gallery={gallery.sculptures}/>
-                    <Paintings projects={projects} gallery={gallery.paintings}/>
-                </>}
-                <Videos/>
-                <Contact/>
-                {isInitialized(projects) && isInitialized(gallery) &&
-                <ProjectsList projects={projects} gallery={gallery}/>}
+                <MainExhibit title={info.name} isPhone={isPhone}/>
+                {isInitialized(gallery) && gallery.map((section, index) =>
+                    isInitialized(section.items) && section.show &&
+                    <Gallery name={section.name} items={section.items} key={index}/>
+                )}
+                <section className="contact-and-list" id="contact">
+                    <Contact/>
+                    {isInitialized(projects) && isInitialized(gallery) &&
+                    <ProjectsList projects={projects} gallery={gallery}/>}
+                    <SectionGifAnimation/>
+                </section>
             </main>
             <footer className="app-footer">
-                <hr/>
-                <Legal/>
-                <Link to="/admin">Admin Page</Link>
+                <Legal isPhone={isPhone}/>
             </footer>
         </>
     }

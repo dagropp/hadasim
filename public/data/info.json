@@ -1,12 +1,14 @@
 {
   "name": "Hadas Golan",
   "email": "hadasim.g@gmail.com",
+  "image": {
+    "src": "\/assets\/images\/contact_image",
+    "orientation": "portrait"
+  },
   "social": {
     "behance": "",
     "facebook": "",
-    "flickr": "",
-    "instagram": "https://www.instagram.com/hadasgolann/",
-    "linkedin": "",
+    "instagram": "https:\/\/www.instagram.com\/miriam_swissa\/",
     "pinterest": "",
     "twitter": "",
     "vimeo": "",

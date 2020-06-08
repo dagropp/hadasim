@@ -1,35 +1,23 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-function Legal() {
+/**
+ * Component of legal data in footer.
+ */
+function Legal(props) {
     const year = new Date().getFullYear();
+    const {isPhone} = props;
 
     return <ul className="legal centered">
-        <li>© {year} Hadas Golan</li>
-        <li>Built by&nbsp;
-            <a className="underline"
-               href="https://www.dgropp.com"
-               target="_blank"
-               rel="noopener noreferrer">Daniel Gropp</a>
-            &nbsp;with <a className="underline"
-                          href="https://reactjs.org/"
-                          target="_blank"
-                          rel="noopener noreferrer">React</a>,&nbsp;
-            <a className="underline"
-               href="https://www.php.net/"
-               target="_blank"
-               rel="noopener noreferrer">PHP</a>
-            &nbsp;and <a className="underline"
-                         href="https://sass-lang.com/"
-                         target="_blank"
-                         rel="noopener noreferrer">Sass</a>
+        <li className="bold">© {year} Hadas Golan</li>
+        <li>Built by <a className="underline" href="https://www.dgropp.com" target="_blank"
+                        rel="noopener noreferrer">Daniel Gropp</a>
+            &nbsp;/ Check it out on <a className="underline" href="https://github.com/dagropp/hadasim" target="_blank"
+                                       rel="noopener noreferrer">GitHub</a>
         </li>
-        <li>Font icons by&nbsp;
-            <a className="underline"
-               href="https://fontawesome.com/"
-               target="_blank"
-               rel="noopener noreferrer">Font Awesome</a>
-            &nbsp;© 2016 Dave Gandy
-        </li>
+        {!isPhone && <li className="admin-link">
+            <Link className="underline" to="/admin">Admin Page</Link>
+        </li>}
     </ul>
 }
 

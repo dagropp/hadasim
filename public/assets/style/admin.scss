@@ -1,0 +1,246 @@
+@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$inset-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+.admin-wrapper {@include restrict-width(1100px);padding-bottom: 50px;
+  * {font-family: 'Lato', sans-serif}
+}
+
+.admin-menu {@include restrict-width(700px);margin: 10px}
+
+.admin-edit {margin: 10px;width: 100%;
+  h1, h2, p {text-align: center}
+  p {margin: 10px 0;font-size: 20px}
+}
+
+form.admin-form {
+  input, textarea {border: none;padding: 5px;
+    &::placeholder {color: $peach;opacity: 1}
+    &[readonly] {background-color: black;color: white}
+  }
+  input[type="text"], input[type="email"], input[type="password"], textarea, select, option {
+    font-size: 16px;border: 1px solid black;transition: .2s box-shadow;height: 30px;
+    &:focus {box-shadow: $inset-shadow}
+  }
+  input[type="checkbox"] {@include appearance(none);height: 20px;width: 20px;border: 2px inset white;outline: 1px solid black;
+    &:checked {background-color: black}
+  }
+  textarea {resize: none;height: 100px}
+  select {padding-left: 5px;padding-right: 25px;@include appearance(none);height: 30px;border: 1px solid black;
+    background: white url("/assets/images/icons/caret.svg") right 10px top 50% / 10px no-repeat}
+  button {
+    @include appearance(none);border: none;background-color: #696969;color: white;cursor: pointer;height: 30px;padding: 0 20px;
+    font-size: 16px;transition: background-color .2s;
+    &:hover {background-color: $peach}
+  }
+}
+
+.admin-form-field {width: 100%;margin-top: 20px;@include restrict-width(700px);
+  display: flex;flex-direction: column;background-color: white;border: 4px solid white;box-sizing: content-box;
+  .title {color: black;font-weight: bold;font-size: 14px;margin-bottom: 5px;
+    &::after {margin-left: 5px;font-size: 0.75em;padding: 3px 5px;color: white;text-transform: uppercase}
+    &.optional {
+      &::after {content: "Optional";background-color: #696969}
+    }
+    &.required {
+      &::after {content: "Required";background-color: $peach}
+    }
+    &.disabled {
+      &::after {content: "Edit Is Disabled";background-color: black}
+    }
+  }
+}
+
+.project-date {
+  .date-wrapper {display: flex;flex-direction: row;width: 100%;
+    select {width: 100%;
+      + select {border-left: none}
+    }
+  }
+}
+
+.project-include {flex-direction: row;
+  .title {margin-bottom: 0;margin-left: 10px;}
+}
+
+.project-dimensions {
+  .dimensions-wrapper {display: flex;flex-direction: row;width: 100%;
+    input {width: 100%;
+      + input {border-left: none}
+    }
+  }
+}
+
+.project-places {
+  label.place-label {width: 100%;display: flex;
+    input.place-input {width: 100%}
+    .icon-plus {height: 30px;width: 30px;background-color: #696969;cursor: pointer;font-size: 16px;transition: .2s background-color;
+      &:hover {background-color: $peach}
+    }
+    + ul.places-list {margin-top: 5px;}
+  }
+  ul.places-list {flex-wrap: wrap;
+    li.place-item {padding: 5px 30px 5px 10px;height: 30px;position: relative;margin: 5px;
+      overflow: hidden;border: 2px solid #696969;color: black;
+      .icon-trash {font-size: 14px;color: white;position: absolute;top: -2px;right: -2px;z-index: 2;cursor: pointer;transition: color .2s;
+        &:hover {color: $peach}
+      }
+      &::after {content: "";position: absolute;top: -20px;right: -20px;z-index: 1;
+        transform: rotate(45deg);height: 40px;width: 40px;background-color: #696969;
+      }
+    }
+  }
+}
+
+.image-upload {border-bottom: none;
+  label.file-label {display: inline-block;position: relative;background-color: #696969;cursor: pointer;
+    transition: .2s background-color;width: 100%;
+    input.file-input {opacity: 0;width: 100%;cursor: pointer}
+    .file-custom-input {width: 100%;@include full-spread;font-size: 16px;pointer-events: none;
+      .icon-upload {margin-left: 10px}
+    }
+    &:hover {background-color: $peach}
+  }
+  .upload-thumbnails {display: flex;flex-wrap: wrap;margin-top: 5px;background-color: white;
+    .thumbnail {margin: 5px;max-width: 100%;
+      .item-wrapper {
+        img, video {height: 150px;object-fit: cover}
+        .upload-invalid-disclaimer {@include full-spread;background-color: rgba(255, 0, 0, 0.7);
+          text-transform: uppercase;text-align: center;font-weight: bold;z-index: 1}
+        .icon-play {color: rgba(255, 255, 255, 0.6);@include full-spread;pointer-events: none;font-size: 40px}
+      }
+      input {position: absolute;bottom: 0;left: 0;right: 0;border: none;border-top: 1px solid black;font-size: 12px;
+        height: 20px;width: 100%;background-color: rgba(255, 255, 255, 0.6);transition-property: background-color;
+        &:focus {background-color: white;box-shadow: none}
+      }
+      &.new {box-shadow: 0 0 5px 5px rgba(173, 255, 47, 0.6)}
+    }
+  }
+  &.metadata-favicon {
+    .upload-thumbnails .thumbnail .item-wrapper {
+      .upload-invalid-disclaimer {word-break: break-word;font-size: 10px}
+      img {height: 50px}
+    }
+  }
+}
+
+.admin-submit {width: 250px;margin-top: 20px;text-transform: uppercase;font-weight: bold}
+
+.submit-loader {background-color: rgba(255, 255, 255, 0.7);z-index: 5;color: black;
+  -webkit-backdrop-filter: blur(2px);backdrop-filter: blur(2px);
+  .loader-message {font-size: 20px;margin-bottom: 20px;font-weight: bold}
+  .icon-spinner {font-size: 150px;animation: spin 2s linear infinite}
+  @keyframes spin {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+  }
+}
+
+.admin-menu-section {margin-top: 20px;
+  .admin-menu-list {margin-top: 20px;display: flex;flex-direction: column;
+    .list-item {background-color: #696969;padding: 5px 10px;display: flex;align-items: flex-end;
+      h2 {display: flex;align-items: center}
+      .date {font-size: 16px;margin-left: 10px}
+      .action {margin-left: 10px;background-color: black;padding: 0 5px;color: white;cursor: pointer;height: 20px;
+        font-size: 0.9em;text-transform: uppercase;transition: background-color .2s;font-weight: bold;user-select: none;
+        &.disabled {background-color: #808080;pointer-events: none}
+        &.positive {background-color: #1e90ff}
+        &.negative {background-color: #8b0000}
+        &.selected {background-color: #1e90ff}
+        &:hover {background-color: $peach}
+      }
+      .admin-move-arrows {
+        margin-left: auto;
+        .action {margin: 0}
+      }
+      &.new {background-color: $peach;transition: background-color .2s;cursor: pointer;padding: 0;
+        a {display: flex;align-items: center;width: 100%;padding: 5px 10px;
+          .icon-plus {margin-left: 5px}
+        }
+        &:hover {background-color: white;
+          a {color: $peach}
+        }
+      }
+      &.actions {background-color: white;color: black}
+      + .list-item {margin-top: 10px}
+    }
+  }
+}
+
+.contact-social {
+  .social-item {width: auto;margin-top: 5px}
+}
+
+section.gallery-wrapper.admin-edit-gallery {width: $app-max-width / 2;margin: 20px auto 0;
+  .image-gallery {margin: 0;
+    .draggable-wrapper {padding: 8px;border: 2px solid black;transition: .2s all;
+      .gallery-item {margin: 0;cursor: grab;z-index: 2;
+        &.portrait {height: 200px;
+          &.small {height: 150px}
+          &.large {height: 250px}
+        }
+        &.landscape {height: 150px;
+          &.small {height: 100px}
+          &.large {height: 200px}
+        }
+        .item-drag {height: 100%;
+          &:active {cursor: grabbing}
+        }
+        .icon-play {color: rgba(255, 255, 255, 0.6);@include full-spread;pointer-events: none;font-size: 50px}
+        .actions {justify-content: flex-start;
+          .icon-trash {margin-left: auto}
+          .disabled {color: #696969;cursor: auto}
+        }
+      }
+      &.drag-enter {border-right: 2px solid $peach}
+    }
+  }
+  .video-gallery-actions-wrapper {width: 100%;position: relative;border: 1px solid rgba(250, 160, 133, 0.4);
+    .enabled-on-touch {cursor: pointer;font-weight: bold;position: relative;
+      * {pointer-events: none}
+      .overlay {text-transform: uppercase;font-size: 16px;@include full-spread;z-index: 3;user-select: none;
+        background-color: rgba(0, 0, 0, 0.8);transition: all ease-in-out 0.3s}
+      &:hover {
+        .overlay {background-color: rgba(250, 160, 133, 0.4);color: black}
+      }
+      &.enabled {z-index: 4;cursor: auto;background-color: black;
+        * {pointer-events: auto}
+      }
+    }
+    &.edit-mode {
+      .enabled-on-touch {border: none;
+        .overlay {display: none}
+      }
+      .video-project-arrows {display: none}
+    }
+    .video-project-arrows {position: absolute;left: 100%;top: 0;pointer-events: auto;
+      i {font-size: 20px;border: 1px solid rgba(250, 160, 133, 0.4);cursor: pointer;
+        transition: background-color, color 0.3s ease-in-out;
+        &:hover {background-color: $peach}
+        &.disabled {color: #696969;border-color: transparent;pointer-events: none}
+      }
+    }
+    + .video-gallery-actions-wrapper {border-top: none;}
+  }
+  .gallery-edit-mode {@include full-spread(fixed);background-color: rgba(250, 160, 133, 0.7);z-index: 3;cursor: pointer}
+}
+
+.login-fail-message {text-transform: uppercase;font-weight: bold;margin-top: 20px;color: $peach}
+
+nav.admin-nav-bar {@include restrict-width(700px);
+  ul.nav-list {text-transform: uppercase;font-weight: bold;margin-top: 20px;justify-content: space-between;
+    li {
+      + li {margin-left: 120px}
+    }
+  }
+}
+
+.thumbnail {position: relative;overflow: hidden;border: 2px solid #696969;
+  .actions {position: absolute;top: 0;left: 0;right: 0;background-color: rgba(105, 105, 105, 0.4);height: 25px;
+    display: flex;justify-content: flex-end;align-items: center;
+    i {cursor: pointer;font-size: 16px;transition: color .2s;height: 100%;
+      &:hover {color: $peach}
+    }
+  }
+  .item-wrapper {height: 100%}
+}

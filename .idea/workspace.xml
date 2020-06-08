@@ -10,36 +10,196 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="785468ea-5a30-4c24-bf99-057d9d77c681" name="Default Changelist" comment="First commit. Main site front-end completed, awaiting design changes.">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/data/gallery.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/project_utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-component/admin/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectID.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/index.jsx" afterDir="false" />
+    <list default="true" id="785468ea-5a30-4c24-bf99-057d9d77c681" name="Default Changelist" comment="Changed hooks components to class. Converted to absolute path.">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/style/admin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/array_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/cookie_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/gif_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/server_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/state_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/string_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/AdminLogIn.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/AdminNavBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/GalleryMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/MoreActionsMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/ProjectsMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/gallery/DraggableImage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/gallery/NewGallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/gallery/RearrangeGallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/gallery/RearrangeImageGallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/gallery/RearrangeVideoGallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/gallery/VideoProjectArrows.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/AdminArrows.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/AdminMediaUpload.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/AdminSubmit.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/AdminTextArea.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/AdminTextInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/MediaThumbnail.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/NonRefreshableComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/input/SubmitLoader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/more-actions/ContactImage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/more-actions/EditContact.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/more-actions/EditMetadata.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectDate.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectDimensions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectGallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectId.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectMedia.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectTechnique.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/admin/project/ProjectTitle.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/display/LightBox.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/display/SectionGifAnimation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/icons/ClickIconWrapper.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/icons/CloseIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/icons/NextIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/icons/PrevIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/main/Gallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/main/MainExhibit.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-component/videos/LocalVideo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/arrow_down.ai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/arrow_down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/css/animation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/css/fontello-codes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/css/fontello-embedded.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/css/fontello-ie7-codes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/css/fontello-ie7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/css/fontello.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/font/fontello.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/font/fontello.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/font/fontello.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/font/fontello.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fontello-34bc0f16/font/fontello.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/arrow.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ01=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ01=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ01=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ01=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ02=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ02=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ02=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ02=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ03=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ03=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ03=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ03=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ04=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ04=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ04=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ04=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ05=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ05=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ05=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ05=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ06=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ06=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ06=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ06=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ07=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ07=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ07=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMQ07=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg01=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg01=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg01=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg01=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg02=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg02=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg02=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg02=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg03=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg03=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg03=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg03=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg04=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg04=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg04=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/paintings/UGFpbnRpbmdzMg04=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE01=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE01=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE01=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE01=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE02=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE02=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE02=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE02=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE03=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE03=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE03=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDE03=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI01=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI01=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI01=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI01=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI02=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI02=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI03=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI03=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI03=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDI03=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM01=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM01=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM01=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM01=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM02=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM02=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM02=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM02=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM03=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM03=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM03=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM03=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM04=large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM04=large.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM04=small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sculptures/VGVzdDM04=small.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/test.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/test/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/test/portrait.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/style/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/main.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/style/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/style/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/videos/New folder/main.prproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/videos/main_compressed.webm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/gallery.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data/gallery.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/info.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data/info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/videos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/custom-hooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/custom-hooks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-component/admin/DateInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/admin/project/DateInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-component/admin/EditProject.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/custom-hooks.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/project_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/project_utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/app_utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/admin/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/admin/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/admin/project/DateInput.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/admin/project/ProjectID.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/admin/project/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/admin/project/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/images/ImageGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/images/ImageGallery.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/images/ImageModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/images/ImageModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/images/ImageZoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/images/ImageZoom.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/main/AppHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/AppHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/ArrowDown.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/main/BackToTopButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/BackToTopButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/main/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-component/main/HomeExhibit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/HomeExhibit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-component/main/Paintings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Paintings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/HomeExhibit.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Legal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Legal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Paintings.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/main/ProjectsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/ProjectsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-component/main/Sculptures.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Sculptures.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-component/main/Videos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/Videos.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Sculptures.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/main/Videos.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/main/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/main/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-component/videos/EmbeddedVideo.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-component/videos/VideoGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-component/videos/VideoGallery.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +213,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="SCSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -67,17 +229,31 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lift_calculator" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\hadasim\src\react-component\icons" />
+      <recent name="C:\wamp64\www\hadasim\build\controllers\utils" />
+      <recent name="C:\wamp64\www\hadasim\modules\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\hadasim\src\react-component\admin\project" />
+      <recent name="C:\wamp64\www\hadasim\src\react-component\display" />
+      <recent name="C:\wamp64\www\hadasim\src\react-component\admin\input" />
+      <recent name="C:\wamp64\www\hadasim\src\react-component\videos" />
+      <recent name="C:\wamp64\www\hadasim\src\react-component\admin\more-actions" />
+      <recent name="C:\wamp64\www\hadasim\src\react-component\admin" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -95,7 +271,60 @@
       <workItem from="1588406434215" duration="2800000" />
       <workItem from="1588423614097" duration="4827000" />
       <workItem from="1588428673801" duration="125000" />
-      <workItem from="1588490930329" duration="9595000" />
+      <workItem from="1588490930329" duration="14842000" />
+      <workItem from="1588573224524" duration="17283000" />
+      <workItem from="1588657125578" duration="9053000" />
+      <workItem from="1588749758104" duration="6299000" />
+      <workItem from="1588834529755" duration="11565000" />
+      <workItem from="1588925273574" duration="2998000" />
+      <workItem from="1588928301468" duration="4092000" />
+      <workItem from="1589004902347" duration="2850000" />
+      <workItem from="1589027290547" duration="4681000" />
+      <workItem from="1589095705527" duration="1237000" />
+      <workItem from="1589112445481" duration="6206000" />
+      <workItem from="1589176819612" duration="11033000" />
+      <workItem from="1589264350861" duration="1365000" />
+      <workItem from="1589352270904" duration="14679000" />
+      <workItem from="1589432913195" duration="15759000" />
+      <workItem from="1589524254603" duration="4952000" />
+      <workItem from="1589531389137" duration="3295000" />
+      <workItem from="1589622699140" duration="3230000" />
+      <workItem from="1589695208933" duration="16004000" />
+      <workItem from="1589782238010" duration="13628000" />
+      <workItem from="1589809486478" duration="2426000" />
+      <workItem from="1589864988740" duration="21233000" />
+      <workItem from="1589950812961" duration="20747000" />
+      <workItem from="1590044369818" duration="13008000" />
+      <workItem from="1590303783750" duration="16517000" />
+      <workItem from="1590322952428" duration="58000" />
+      <workItem from="1590323203926" duration="1311000" />
+      <workItem from="1590388115015" duration="21370000" />
+      <workItem from="1590474896252" duration="21418000" />
+      <workItem from="1590572183873" duration="12332000" />
+      <workItem from="1590660106244" duration="6097000" />
+      <workItem from="1590754249300" duration="8288000" />
+      <workItem from="1590904032662" duration="26823000" />
+      <workItem from="1590992358030" duration="775000" />
+      <workItem from="1591003291614" duration="18092000" />
+      <workItem from="1591075207691" duration="4486000" />
+      <workItem from="1591084171576" duration="13715000" />
+      <workItem from="1591168291736" duration="19245000" />
+      <workItem from="1591198738067" duration="714000" />
+      <workItem from="1591200864161" duration="27000" />
+      <workItem from="1591251378328" duration="3794000" />
+      <workItem from="1591255255166" duration="18159000" />
+      <workItem from="1591277007909" duration="10000" />
+      <workItem from="1591284426627" duration="799000" />
+      <workItem from="1591338509050" duration="3004000" />
+      <workItem from="1591366570744" duration="2270000" />
+      <workItem from="1591509850996" duration="22811000" />
+      <workItem from="1591535003108" duration="636000" />
+      <workItem from="1591537900288" duration="315000" />
+      <workItem from="1591538295700" duration="19000" />
+      <workItem from="1591544220775" duration="2349000" />
+      <workItem from="1591593269079" duration="15087000" />
+      <workItem from="1591619597242" duration="30000" />
+      <workItem from="1591630570557" duration="3585000" />
     </task>
     <task id="LOCAL‎00001" summary="First commit. Main site front-end completed, awaiting design changes.">
       <created>1588332862317</created>
@@ -103,7 +332,13 @@
       <option name="presentableId" value="LOCAL‎00001" />
       <updated>1588332862317</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎00002" summary="Changed hooks components to class. Converted to absolute path.">
+      <created>1588502032685</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1588502032685</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,28 +358,70 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit. Main site front-end completed, awaiting design changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit. Main site front-end completed, awaiting design changes." />
+    <MESSAGE value="Changed hooks components to class. Converted to absolute path." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed hooks components to class. Converted to absolute path." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1186" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588501150288">
+    <state x="-1186" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590910696678">
       <screen x="-1920" y="9" width="1920" height="1040" />
     </state>
-    <state x="-1186" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588501150288" />
+    <state x="-1186" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1590910696678" />
+    <state x="-1155" y="211" key="#com.intellij.ide.util.MemberChooser" timestamp="1590910960092">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1155" y="211" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1590910960092" />
+    <state x="-1239" y="9" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591522142129">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1239" y="9" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1591522142129" />
+    <state x="-1230" y="284" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589961247144">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1230" y="284" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1589961247144" />
     <state x="-1291" y="307" key="EditFileWatcherDialog" timestamp="1588500559446">
       <screen x="-1920" y="9" width="1920" height="1040" />
     </state>
     <state x="-1291" y="307" key="EditFileWatcherDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588500559446" />
-    <state x="-1368" y="262" key="Vcs.Push.Dialog.v2" timestamp="1588332874615">
+    <state x="-1180" y="284" key="FileChooserDialogImpl" timestamp="1591510848947">
       <screen x="-1920" y="9" width="1920" height="1040" />
     </state>
-    <state x="-1368" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588332874615" />
+    <state x="-1180" y="284" key="FileChooserDialogImpl/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1591510848947" />
+    <state x="-1166" y="252" key="NewPhpClassDialog" timestamp="1591517193083">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1166" y="252" key="NewPhpClassDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1591517193083" />
+    <state x="-1126" y="452" key="NewPhpFileDialog" timestamp="1591544251394">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1126" y="452" key="NewPhpFileDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1591544251394" />
+    <state x="-1459" y="174" key="SettingsEditor" timestamp="1588834813937">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1459" y="174" key="SettingsEditor/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588834813937" />
+    <state x="-1368" y="262" key="Vcs.Push.Dialog.v2" timestamp="1588502047207">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588502047207" />
+    <state x="-1151" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588502042002">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1151" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588502042002" />
+    <state x="-1253" y="233" width="585" height="624" key="find.popup" timestamp="1591634104545">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1253" y="233" width="585" height="624" key="find.popup/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1591634104545" />
+    <state x="667" y="152" width="585" height="888" key="find.popup/0.0.1920.1040/-1920.9.1920.1040@0.0.1920.1040" timestamp="1591091099397" />
     <state x="-1159" y="435" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1588332783646">
       <screen x="-1920" y="9" width="1920" height="1040" />
     </state>
     <state x="-1159" y="435" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588332783646" />
-    <state x="-1297" y="234" width="672" height="678" key="search.everywhere.popup" timestamp="1588425332296">
+    <state x="-1304" y="245" key="run.anything.popup" timestamp="1591534320717">
       <screen x="-1920" y="9" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="234" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1588425332296" />
+    <state x="-1304" y="245" key="run.anything.popup/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1591534320717" />
+    <state x="-1297" y="234" width="672" height="678" key="search.everywhere.popup" timestamp="1591175492734">
+      <screen x="-1920" y="9" width="1920" height="1040" />
+    </state>
+    <state x="-1297" y="234" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.9.1920.1040@-1920.9.1920.1040" timestamp="1591175492734" />
   </component>
 </project>

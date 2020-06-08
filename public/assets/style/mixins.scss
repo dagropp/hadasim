@@ -1,0 +1,73 @@
+/* General Constants*/
+$body-background: black;
+$text-color: white;
+$app-max-width: 1300px;
+/* Header Constants */
+$peach: #faa085;
+$header-height: 45px;
+/* Mixins */
+@mixin full-spread($position: absolute, $offset: 0) {
+  position: $position;top: $offset;right: $offset;bottom: $offset;left: $offset;
+}
+
+@mixin flex-centered($direction: row) {
+  display: flex;flex-direction: $direction;align-items: center;justify-content: center;
+}
+
+@mixin restrict-width($restriction, $width: 100%) {
+  width: $width;max-width: $restriction;
+}
+
+@mixin appearance($val) {
+  -moz-appearance: $val;-webkit-appearance: $val;appearance: $val;
+}
+
+/* Media Queries */
+$media-small-phone: 320px;
+$media-phone: 599px;
+$media-tablet-portrait: 800px;
+$media-tablet-landscape: 1024px;
+$media-desktop: 1025px;
+@mixin media-small-phone {
+  @media only screen and (max-width: #{$media-small-phone}) {@content}
+}
+
+@mixin media-phone {
+  @media only screen and (max-width: #{$media-phone}) {@content}
+}
+
+@mixin media-tablet-portrait {
+  @media only screen and (max-width: #{$media-tablet-portrait}) {@content}
+}
+
+@mixin media-tablet-landscape {
+  @media only screen and (max-width: #{$media-tablet-landscape}) {@content}
+}
+
+@mixin media-desktop-only {
+  @media only screen and (min-width: $media-desktop) {@content}
+}
+
+/* Fonts */
+@font-face {
+  font-family: "HelveticaLTStd";
+  src: url("/assets/fonts/HelveticaLTStd-Light.woff2") format("woff2"),
+  url("/assets/fonts/HelveticaLTStd-Light.woff") format("woff"),
+  url("/assets/fonts/HelveticaLTStd-Light.otf") format("opentype"),
+  url("/assets/fonts/HelveticaLTStd-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reusables */
+.bold {font-weight: bold}
+
+.centered {text-align: center}
+
+.underline {text-decoration: underline}
+
+.flex-row-centered {@include flex-centered}
+
+.flex-col-centered {@include flex-centered(column)}
+
+.light-box {@include full-spread(fixed)}
