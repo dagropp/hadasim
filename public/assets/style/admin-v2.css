@@ -45,6 +45,10 @@
   left: 0;
 }
 
+.line-spacer {
+  width: 100%;
+}
+
 .admin-wrapper {
   width: 100%;
   max-width: 1100px;
@@ -348,6 +352,9 @@ form.admin-form button:hover {
   background-color: white;
   box-shadow: none;
 }
+.image-upload .upload-thumbnails .thumbnail input:first-of-type {
+  bottom: 20px;
+}
 .image-upload .upload-thumbnails .thumbnail.new {
   box-shadow: 0 0 5px 5px rgba(173, 255, 47, 0.6);
 }
@@ -439,6 +446,11 @@ form.admin-form button:hover {
 .admin-menu-section .admin-menu-list .list-item .action.selected {
   background-color: #1e90ff;
 }
+.admin-menu-section .admin-menu-list .list-item .action.gallery-name {
+  background-color: pink;
+  color: green;
+  margin-left: auto;
+}
 .admin-menu-section .admin-menu-list .list-item .action:hover {
   background-color: #faa085;
 }
@@ -490,7 +502,7 @@ section.gallery-wrapper.admin-edit-gallery .image-gallery {
   margin: 0;
 }
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper {
-  padding: 8px;
+  padding: 13px;
   border: 2px solid black;
   transition: 0.2s all;
 }
@@ -502,19 +514,31 @@ section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .ga
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.portrait {
   height: 200px;
 }
+section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.portrait.tiny {
+  height: 100px;
+}
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.portrait.small {
   height: 150px;
 }
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.portrait.large {
   height: 250px;
 }
+section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.portrait.full {
+  height: 250px;
+}
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.landscape {
   height: 150px;
+}
+section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.landscape.tiny {
+  height: 75px;
 }
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.landscape.small {
   height: 100px;
 }
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.landscape.large {
+  height: 200px;
+}
+section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item.landscape.full {
   height: 200px;
 }
 section.gallery-wrapper.admin-edit-gallery .image-gallery .draggable-wrapper .gallery-item .item-drag {
@@ -677,4 +701,4 @@ nav.admin-nav-bar ul.nav-list li + li {
   height: 100%;
 }
 
-/*# sourceMappingURL=admin.css.map */
+/*# sourceMappingURL=admin-v2.css.map */

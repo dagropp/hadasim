@@ -1,4 +1,4 @@
-@import "mixins";
+@import "mixins-v2";
 /* Site Styles */
 * {margin: 0;padding: 0;box-sizing: border-box;list-style: none;font-family: "HelveticaLTStd", sans-serif}
 
@@ -20,7 +20,7 @@ img {user-select: none}
 
 nav.app-menu, main.app-wrapper, footer.app-footer {@include restrict-width($app-max-width)}
 
-header.app-header {position: sticky;top: 0;z-index: 1;background-color: $body-background;width: 100%;
+header.app-header {position: -webkit-sticky;position: sticky;top: 0;z-index: 2;background-color: $body-background;width: 100%;
   nav.app-menu {margin: auto;display: flex;justify-content: space-between;align-items: center;border-bottom: 2px solid $peach;
     a {border-bottom: 1px solid transparent;user-select: none}
     h1 {font-size: 16px;padding: 10px 15px}
@@ -32,7 +32,7 @@ header.app-header {position: sticky;top: 0;z-index: 1;background-color: $body-ba
   @include media-tablet-portrait {
     nav.app-menu {justify-content: center;
       h1 {display: none}
-      ul.menu-list {padding: 0 10px;justify-content: center;flex-wrap: wrap;
+      ul.menu-list {padding: 0 10px;justify-content: space-around;flex-wrap: wrap;
         li {padding: 10px 7px;font-size: 15px}
       }
     }
@@ -47,55 +47,85 @@ header.app-header {position: sticky;top: 0;z-index: 1;background-color: $body-ba
 }
 
 /* General styles for main section */
-main.app-wrapper {padding: 20px;
+main.app-wrapper {
   h1 {margin-bottom: 30px;font-size: 8vw;color: $peach}
   section {min-height: calc(100vh - 60px);
     h2 {text-align: center;margin-bottom: 140px}
     + section {margin-top: 100px;padding-top: 140px}
+    &.home-exhibit {min-height: calc(100vh - 90px)}
+    &:nth-of-type(2) {margin-top: 0}
     @include media-tablet-landscape {
       h2 {margin-bottom: 110px}
       + section {padding-top: 100px}
     }
+    @include media-tablet-portrait {
+      &.home-exhibit {justify-content: flex-start;
+        h1 {font-size: 30px;margin-top: 30px}
+        .exhibit-video {flex: 1;object-fit: contain}
+      }
+    }
     @include media-phone {
       h2 {margin-bottom: 60px}
       + section {padding-top: 50px}
+      &.home-exhibit {
+        h1 {font-size: 20px}
+      }
+      &.gallery-wrapper {margin-left: 45px;margin-right: 45px}
+      &.contact-and-list {margin-left: 20px;margin-right: 20px}
     }
   }
 }
 
-section.home-exhibit {position: relative;
+section.home-exhibit {position: relative;z-index: 1;
+  .gifs {@include full-spread;z-index: -1;display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-content: space-between;justify-items: center;
+    .gif-line-drop {position: static}
+    @include media-phone {grid-template-columns: 1fr 1fr 1fr;
+      .gif-line-drop {display: block}
+    }
+  }
   video.exhibit-video {@include restrict-width(720px);object-fit: cover}
 }
 
 /* Sculptures section styles */
 section.gallery-wrapper {display: flex;flex-direction: column;align-items: center;position: relative;
-  .image-gallery {display: flex;flex-wrap: wrap;justify-content: center;align-items: flex-start;width: 100%;margin: -30px;
+  .image-gallery {display: flex;flex-wrap: wrap;justify-content: center;align-items: center;width: 100%;margin: -30px;
     .gallery-item {display: flex;height: 300px;margin: 30px;position: relative;max-width: 100%;
       .image-container {width: 100% !important;height: 100% !important;overflow: hidden;
         .gallery-image {height: 100% !important;width: auto !important;overflow: hidden;object-fit: contain}
       }
       video {height: 100% !important;width: auto !important;overflow: hidden;object-fit: contain}
+      &.tiny {height: 150px}
       &.small {height: 200px}
       &.large {height: 400px}
+      &.full {height: 400px}
       &.portrait {height: 400px;
+        &.tiny {height: 200px}
         &.small {height: 300px}
         &.large {height: 500px}
+        &.full {height: 500px}
       }
       .gif-led-drop {position: absolute;right: -60px;width: 60px;object-fit: cover;pointer-events: none;
         &.top {top: 0}
         &.middle {top: 50%;margin-top: -75px}
         &.bottom {bottom: 0}
-        @include media-tablet-portrait {
-          display: none;
-        }
       }
+      .image-credits {position: absolute;transform: rotate(-90deg);bottom: 40px;left: -55px;width: max-content;
+        font-size: 9px;letter-spacing: 0.05em;opacity: 0;pointer-events: none;transition: opacity .2s ease-in-out}
+      &:hover .image-credits {opacity: 1}
     }
   }
   @include media-phone {
     .image-gallery {flex-wrap: nowrap;@include flex-centered(column);margin: 0;
-      .gallery-item {padding: 20px;margin: 0;width: 100%;height: auto !important;
+      .gallery-item {padding: 35px 20px;margin: 0;width: 100%;height: auto !important;
         .image-container {
           .gallery-image {height: 100% !important;width: 100% !important}
+        }
+        &:nth-of-type(even) {
+          .gif-led-drop {left: -45px}
+        }
+        &:nth-of-type(odd) {
+          .gif-led-drop {right: -45px}
         }
       }
     }
@@ -103,8 +133,13 @@ section.gallery-wrapper {display: flex;flex-direction: column;align-items: cente
   &.videos {
     h2 {margin-bottom: 40px}
     .video-gallery {width: 100%;margin: -30px;
-      .disclaimer {font-size: 16px;letter-spacing: 0.03em;margin-bottom: 80px}
-      .image-gallery {margin: 0}
+      .image-gallery {margin: 0;
+        .gallery-item {
+          .disclaimer {font-size: 14px;letter-spacing: 0.03em;bottom: 0;text-align: center;padding: 5px;opacity: 0;
+            position: absolute;left: 0;right: 0;top: 100%;transition: opacity .3s ease-in-out;pointer-events: none}
+          &:hover .disclaimer {opacity: 1}
+        }
+      }
     }
   }
 }
@@ -112,9 +147,12 @@ section.gallery-wrapper {display: flex;flex-direction: column;align-items: cente
 section.contact-and-list {position: relative;
   .contact {display: flex;align-items: center;flex-direction: column;
     h2 {margin-bottom: 80px}
-    img {object-fit: contain;
+    .media-item {overflow: hidden;
+      .image-container {height: 100% !important;width: 100% !important;
+        .gallery-image {width: 100% !important;object-fit: contain}
+      }
       &.portrait {width: 150px}
-      &.landscape {height: 150px}
+      &.landscape {width: 300px}
     }
     .info-list {margin-top: 50px;font-size: 16px;
       li + li {margin-top: 10px}
@@ -128,6 +166,11 @@ section.contact-and-list {position: relative;
           &:hover {color: $peach}
         }
         + li {margin-top: 10px}
+        &.new-section {margin-top: 25px}
+        &.active {color: white; animation: show-active-color 2.5s linear}
+        @keyframes show-active-color {
+          20%, 80% {color: $peach}
+        }
       }
     }
   }
@@ -144,33 +187,39 @@ footer.app-footer {padding-bottom: 20px;margin-top: 100px;border-top: 2px solid 
 }
 
 .gif-line-drop {position: absolute;width: 100px;
+  &:nth-of-type(1) {top: 0;left: 0}
+  &:nth-of-type(2) {bottom: 0;right: 0}
   &.top {top: 0;left: 0}
   &.bottom {bottom: 0;right: 0}
   &.middle {right: -50px;
     &:nth-child(even) {left: -50px}
   }
-  @include media-tablet-portrait {
+  @include media-phone {
+    //&:nth-of-type(1) {left: -60px}
+    //&:nth-of-type(2) {right: -60px}
     display: none;
   }
 }
 
 .back-to-top-button {border-radius: 50%;background-color: $peach;height: 45px;width: 45px;
-  position: fixed;bottom: 15px;right: 15px;z-index: 5;box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+  position: fixed;bottom: 15px;right: 45px;z-index: 5;box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;opacity: 0;pointer-events: none;transition: .3s opacity ease-in-out;
   .click-up {width: 25px;
-    svg polygon {fill: black!important;}
+    svg polygon {fill: black !important;}
   }
   &.show {opacity: 1;pointer-events: auto}
   &.active {opacity: 0;pointer-events: none}
+  @include media-phone {right: 15px}
 }
 
 .image-modal {z-index: 2;padding: 10px;animation: fade-in .2s linear;
   display: flex;flex-direction: column;align-items: center;justify-content: center;
-  .backdrop {@include full-spread;z-index: 1;background-color: rgba(0, 0, 0, .7)}
+  .backdrop {@include full-spread;z-index: 1;background-color: rgba(0, 0, 0, 0.9)}
   .image-wrapper {width: 60%;height: 60%;position: relative;
     .title {position: absolute;z-index: 3;top: 100%;left: 0;right: 0;padding: 15px;text-align: center;
-      h2 {font-size: 18px;margin-bottom: 10px}
-      p {font-size: 14px}
+      h2 {font-size: 18px;margin-bottom: 10px;text-transform: none}
+      h3 {letter-spacing: 0.05em}
+      p {font-size: 14px;margin-top: 10px}
     }
     img, video {height: 100%;width: 100%;max-height: calc(100vh - 20px);position: relative;z-index: 2;
       object-fit: contain;}
@@ -190,13 +239,17 @@ footer.app-footer {padding-bottom: 20px;margin-top: 100px;border-top: 2px solid 
   @include media-phone {padding: 20px;
     .backdrop {background-color: rgba(0, 0, 0, .9)}
     .image-wrapper {width: 100%;height: 100%;@include flex-centered;
-      .title {position: fixed;top: calc(100% - 80px);width: 100%}
-      img, video {height: auto}
+      .title {position: fixed;top: auto;bottom: 0;width: 100%;
+        h2 {font-size: 16px}
+        h3 {font-size: 14px}
+        p {font-size: 12px}
+      }
+      img, video {height: auto;width: 80%}
     }
     .actions {
       .icon-wrapper {
-        &.click-next, &.click-prev {height: 50px;width: 70px}
-        &.click-close {top: 20px;right: 20px;height: 35px}
+        &.click-next, &.click-prev {height: 50px;width: 50px}
+        &.click-close {top: 10vw;right: 10%;transform: translate(-17.5px);height: 35px}
       }
     }
   }

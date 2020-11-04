@@ -10,8 +10,8 @@ function RearrangeImageGallery(props) {
 
     return <section className="gallery-wrapper admin-edit-gallery">
         <div className="image-gallery">
-            {isInitialized(items) && items.map((item, index) => item.show &&
-                <DraggableImage item={item} index={index} key={index} {...props}/>)}
+            {isInitialized(items) && items.map((item, index) =>
+                item.show && <DraggableImage item={item} index={index} key={index} {...props}/>)}
         </div>
     </section>
 }

@@ -24,13 +24,14 @@ class ProjectVideo extends ProjectMediaItem
      * @param array $project project to write video to.
      * @param bool $show true to show video in gallery, false otherwise.
      * @param string $credits if set, add credits to video.
+     * @param string $tag if set, add tag to media item.
      * @param array $approvedTypes which types are OK to write.
      * @param int $byteSizeLimit what is the max video size in bytes.
      * @throws Exception if file size is bigger than specified byteSizeLimit.
      */
-    public function __construct(array $item, array $project, bool $show, string $credits, array $approvedTypes, int $byteSizeLimit)
+    public function __construct(array $item, array $project, bool $show, string $credits, string $tag, array $approvedTypes, int $byteSizeLimit)
     {
-        parent::__construct($item, $project, $show, $credits, $approvedTypes);
+        parent::__construct($item, $project, $show, $credits, $tag, $approvedTypes);
         if (filesize($item["tmp_name"]) > $byteSizeLimit) {
             throw new Exception("Max file size 5MB");
         }

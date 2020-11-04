@@ -14,7 +14,9 @@ function ImageGallery(props) {
 
     return <div className="image-gallery">
         {gallery.map((item, index) => item.show &&
-            <div className={`gallery-item ${item.orientation} ${item.size}`} key={index}>
+            <React.Fragment key={index}>
+                {item.size === "full" && <div className="line-spacer"/>}
+            <div className={`gallery-item ${item.orientation} ${item.size}`}>
                 {item.type === "image"
                     ? <ImageZoom image={item}/>
                     : <LocalVideo src={item.src} autoplay={true} key={index}/>
@@ -22,7 +24,10 @@ function ImageGallery(props) {
                 {isInitialized(animations) &&
                 <img className={`gif-led-drop ${animations[index].position}`}
                      src={animations[index].src} alt="LED"/>}
+                {item.credits && <div className="image-credits">Photo: {item.credits}</div>}
             </div>
+                {item.size === "full" && <div className="line-spacer"/>}
+            </React.Fragment>
         )}
     </div>
 }

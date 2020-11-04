@@ -1,4 +1,4 @@
-@import "mixins";
+@import "mixins-v2";
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 $inset-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
@@ -112,6 +112,7 @@ form.admin-form {
       input {position: absolute;bottom: 0;left: 0;right: 0;border: none;border-top: 1px solid black;font-size: 12px;
         height: 20px;width: 100%;background-color: rgba(255, 255, 255, 0.6);transition-property: background-color;
         &:focus {background-color: white;box-shadow: none}
+        &:first-of-type {bottom: 20px}
       }
       &.new {box-shadow: 0 0 5px 5px rgba(173, 255, 47, 0.6)}
     }
@@ -147,6 +148,7 @@ form.admin-form {
         &.positive {background-color: #1e90ff}
         &.negative {background-color: #8b0000}
         &.selected {background-color: #1e90ff}
+        &.gallery-name {background-color: pink;color: green;margin-left: auto;}
         &:hover {background-color: $peach}
       }
       .admin-move-arrows {
@@ -173,15 +175,19 @@ form.admin-form {
 
 section.gallery-wrapper.admin-edit-gallery {width: $app-max-width / 2;margin: 20px auto 0;
   .image-gallery {margin: 0;
-    .draggable-wrapper {padding: 8px;border: 2px solid black;transition: .2s all;
+    .draggable-wrapper {padding: 13px;border: 2px solid black;transition: .2s all;
       .gallery-item {margin: 0;cursor: grab;z-index: 2;
         &.portrait {height: 200px;
+          &.tiny {height: 100px}
           &.small {height: 150px}
           &.large {height: 250px}
+          &.full {height: 250px}
         }
         &.landscape {height: 150px;
+          &.tiny {height: 75px}
           &.small {height: 100px}
           &.large {height: 200px}
+          &.full {height: 200px}
         }
         .item-drag {height: 100%;
           &:active {cursor: grabbing}

@@ -25,7 +25,7 @@ class ContactImage extends React.Component {
         const currentThumbs = [];
         // Pushes contact image to {File}-like object.
         info.image.src && currentThumbs.push({
-            src: `${info.image.src}.jpg?${window.btoa(Math.random().toString())}`,
+            src: `${info.image.src}=small.jpg`,
             file: {name: info.image.src, type: "image"}
         });
         this.setState({currentThumbs})

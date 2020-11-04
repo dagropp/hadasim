@@ -56,7 +56,7 @@
 }
  
 .icon-minus:before { content: '\e800'; } /* '' */
-.icon-eye:before { content: '\e801'; } /* '' */
+.icon-show:before { content: '\e801'; } /* '' */
 .icon-hide:before { content: '\e802'; } /* '' */
 .icon-upload:before { content: '\e803'; } /* '' */
 .icon-plus:before { content: '\e804'; } /* '' */

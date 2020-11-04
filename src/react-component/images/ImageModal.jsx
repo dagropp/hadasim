@@ -5,19 +5,20 @@ import NextIcon from "react-component/icons/NextIcon";
 import PrevIcon from "react-component/icons/PrevIcon";
 import CloseIcon from "react-component/icons/CloseIcon";
 import LightBox from "react-component/display/LightBox";
+import {parseDimensions} from "../../common/project_utils";
 
 /**
  * Component of a pop-up image gallery.
  */
 function ImageModal(props) {
-    const {gallery, position, setPosition} = props;
+    const {gallery, position, setPosition, projects} = props;
     const image = gallery[position];
 
     useEffect(() => {
         // Sets functions for different keys
         document.onkeydown = event => {
             const {key} = event;
-            const actions = {ArrowRight: next, ArrowLeft: prev, Escape: close};
+            const actions = {ArrowRight: next, ArrowDown: next, ArrowLeft: prev, ArrowUp: prev, Escape: close};
             actions[key] && actions[key]();
         };
         return () => document.onkeydown = null;
@@ -46,11 +47,15 @@ function ImageModal(props) {
         setPosition(prev);
     }
 
+    const project = projects.find(entry => entry.id === image.projectId);
+
     return <LightBox className={`image-modal ${image.orientation}`}>
         <div className="backdrop" onClick={close}/>
         <div className="image-wrapper">
             <div className="title">
-                <h2>{image.title}</h2>
+                <h2>{image.title} {image.tag &&`[${image.tag}]`}</h2>
+                <h3>{[project.date, project.technique, parseDimensions(project.dimensions)]
+                    .filter(entry => entry).join(", ")}</h3>
                 {image.credits && <p>Photo by {image.credits}</p>}
             </div>
             {image.type === "image"

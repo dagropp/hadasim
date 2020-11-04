@@ -2,8 +2,16 @@
   "name": "Hadas Golan",
   "email": "hadasim.g@gmail.com",
   "image": {
-    "src": "\/assets\/images\/contact_image",
-    "orientation": "portrait"
+    "projectId": "",
+    "title": "Contact Image",
+    "type": "image",
+    "src": "\/assets\/images\/contact_image_39885",
+    "orientation": "portrait",
+    "ratio": 0.807955656993805,
+    "size": "normal",
+    "show": true,
+    "credits": "",
+    "tag": ""
   },
   "social": {
     "behance": "",

@@ -13,7 +13,8 @@ class ProjectsList extends React.Component {
         this.state = {
             sortedProjects: [],
             sortedGallery: [],
-            modalPosition: null
+            modalPosition: null,
+            activeProject: null
         }
     }
 
@@ -27,12 +28,18 @@ class ProjectsList extends React.Component {
      * @return {array} Containing the sorted projects.
      */
     sortProjects() {
-        const {projects} = this.props;
+        const {projects, gallery} = this.props;
         projects.sort((a, b) => {
             const byName = a.title.localeCompare(b.title);
             const byDate = b.date - a.date;
-            // If date is different, sort by date, otherwise sort by name
-            return byDate !== 0 ? byDate : byName;
+            const byGallery = gallery.findIndex(entry => entry.name === a.gallery)
+                - gallery.findIndex(entry => entry.name === b.gallery);
+            // Sort by gallery -> date -> name.
+            if (byGallery !== 0) {
+                return byGallery;
+            } else {
+                return byDate !== 0 ? byDate : byName;
+            }
         });
         return projects;
     }
@@ -69,7 +76,7 @@ class ProjectsList extends React.Component {
      */
     openModal(projectId) {
         const modalPosition = this.galleryIndex(projectId);
-        modalPosition !== -1 && this.setState({modalPosition});
+        modalPosition !== -1 && this.setState({modalPosition, activeProject: projectId});
     }
 
     /**
@@ -77,28 +84,42 @@ class ProjectsList extends React.Component {
      * @param modalPosition {number} index of gallery to move position to.
      */
     setModalPosition(modalPosition) {
-        this.setState({modalPosition})
+        const activeProject = this.state.sortedGallery[modalPosition]?.projectId || this.state.activeProject;
+        this.setState({modalPosition, activeProject})
     }
 
     render() {
         const {projects} = this.props;
-        const {sortedGallery, modalPosition} = this.state;
+        const {sortedGallery, modalPosition, activeProject} = this.state;
+        let currentGallery;
 
         return <div className="projects-list flex-col-centered">
             <h2 className="centered">List of Works</h2>
             <ul className="items-list">
-                {projects.map((project, index) =>
-                    <li className="project-item" key={index}>
+                {projects.map((project, index) => {
+                        const isActive = activeProject === project.id;
+                        let newSectionClass = "";
+                        if (!isInitialized(currentGallery)) {
+                            currentGallery = project.gallery;
+                        } else if (currentGallery !== project.gallery) {
+                            currentGallery = project.gallery;
+                            newSectionClass = "new-section";
+                        }
+
+                        return <li className={`project-item ${newSectionClass} ${isActive ? "active": ""}`}
+                                   key={index}>
                         <span onClick={this.openModal.bind(this, project.id)}>
                             {[project.title, project.date, project.technique, parseDimensions(project.dimensions)]
                                 .filter(entry => entry)
                                 .join(", ")}
                         </span>
-                    </li>
+                        </li>
+                    }
                 )}
             </ul>
             {isInitialized(modalPosition) &&
             <ImageModal gallery={sortedGallery}
+                        projects={projects}
                         position={modalPosition}
                         setPosition={this.setModalPosition.bind(this)}/>}
         </div>

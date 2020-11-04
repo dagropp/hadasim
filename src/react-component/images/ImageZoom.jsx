@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactImageMagnify from "react-image-magnify";
 
 /**
@@ -26,6 +27,10 @@ function ImageZoom(props) {
                               enlargedImageContainerClassName="image-large-container"
                               enlargedImageClassName="image-large"
                               enlargedImagePosition="over"/>
+}
+
+ImageZoom.propTypes = {
+    image: PropTypes.object
 }
 
 export default ImageZoom;

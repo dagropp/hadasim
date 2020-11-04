@@ -1,0 +1,51 @@
+/* General Constants*/
+/* Header Constants */
+/* Mixins */
+/* Media Queries */
+/* Fonts */
+@font-face {
+  font-family: "HelveticaLTStd";
+  src: url("/assets/fonts/HelveticaLTStd-Light.woff2") format("woff2"), url("/assets/fonts/HelveticaLTStd-Light.woff") format("woff"), url("/assets/fonts/HelveticaLTStd-Light.otf") format("opentype"), url("/assets/fonts/HelveticaLTStd-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Reusables */
+.bold {
+  font-weight: bold;
+}
+
+.centered {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.flex-row-centered {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.line-spacer {
+  width: 100%;
+}
+
+/*# sourceMappingURL=mixins-v2.css.map */

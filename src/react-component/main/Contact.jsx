@@ -1,6 +1,7 @@
 import React from "react";
 import {isInitialized} from "common/app_utils";
 import {setData} from "common/server_utils";
+import ImageZoom from "../images/ImageZoom";
 
 /**
  * Component of contact information.
@@ -24,7 +25,9 @@ class Contact extends React.Component {
             <h2>Contact</h2>
             {isInitialized(info) &&
             <>
-                <img className={info.image.orientation} src={`${info.image.src}.jpg`} alt="Self Portrait"/>
+                <div className={`media-item ${info.image.orientation}`}>
+                    <ImageZoom image={info.image}/>
+                </div>
                 <ul className="info-list flex-col-centered">
                     <li>
                         <a href={`mailto:${info.email}`}>{info.email}</a>

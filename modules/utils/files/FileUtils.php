@@ -26,7 +26,7 @@ class FileUtils
      */
     public static function deleteImage(string $image): void
     {
-        self::deleteFiles("$image=small.jpg", "$image=large.jpg");
+        self::deleteFiles("$image=small.jpg", "$image=medium.jpg", "$image=large.jpg");
     }
 
     /**

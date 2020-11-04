@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {confirmAction, isInitialized} from "common/app_utils";
 import {postData} from "common/server_utils";
@@ -9,6 +9,18 @@ import {removeEntryFromArrayByIndex} from "common/array_utils";
  */
 function ProjectsMenu(props) {
     const {projects, gallery, setParentState} = props;
+    const [sortedProjects, setSortedProjects] = useState([]);
+
+    useEffect(() => {
+        const sorted = projects.sort((a,b) => {
+            const byName = a.title.localeCompare(b.title);
+            const byGallery = a.gallery.localeCompare(b.gallery);
+            // If gallery is different, sort by gallery, otherwise sort by name
+            return byGallery !== 0 ? byGallery : byName;
+        }
+        );
+        setSortedProjects(sorted);
+    }, [projects])
 
     /**
      * Deletes project and its images.
@@ -39,7 +51,7 @@ function ProjectsMenu(props) {
                     <h2>Add New Project</h2>
                 </Link>
             </li>
-            {isInitialized(projects) && projects.map((project, index) =>
+            {isInitialized(sortedProjects) && projects.map((project, index) =>
                 <li className="list-item" key={index}>
                     <h2>{project.title}</h2>
                     <span className="date">{project.date}</span>
@@ -47,6 +59,9 @@ function ProjectsMenu(props) {
                           className="action edit flex-row-centered">Edit</Link>
                     <span className="action delete flex-row-centered negative"
                           onClick={deleteProject.bind(this, project, index)}>Delete</span>
+                    <span className="action gallery-name flex-row-centered disabled">
+                        {project.gallery}
+                    </span>
                 </li>
             )}
         </ul>

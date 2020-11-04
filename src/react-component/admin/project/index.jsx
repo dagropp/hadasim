@@ -87,7 +87,8 @@ class EditProject extends React.Component {
                 current: current,
                 remove: false,
                 show: true,
-                credits: ""
+                credits: "",
+                tag: ""
             };
         }
         mediaActions[key][property] = value;

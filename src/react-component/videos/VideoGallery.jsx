@@ -27,6 +27,7 @@ function VideoGallery(props) {
                             ? <ImageZoom image={item}/>
                             : <LocalVideo src={item.src} autoplay={true} key={index}/>
                         }
+                        {item.type === "video" && <span className="disclaimer">Full video on request</span>}
                     </div>
                 )}
             </div>

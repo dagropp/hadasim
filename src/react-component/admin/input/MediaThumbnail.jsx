@@ -12,6 +12,7 @@ class MediaThumbnail extends React.Component {
             remove: false,
             show: true,
             credits: "",
+            tag: ""
         }
     }
 
@@ -21,7 +22,7 @@ class MediaThumbnail extends React.Component {
         }
         const {item} = this.props.data;
         if (isInitialized(item)) {
-            this.setState({show: item.show, credits: item.credits})
+            this.setState({show: item.show, credits: item.credits, tag: item.tag})
         }
     }
 
@@ -58,9 +59,20 @@ class MediaThumbnail extends React.Component {
         this.setMediaActions(data.file, current, "credits", credits);
     }
 
+    /**
+     * Sets tag for thumbnail and adds its data to mediaActions array.
+     * @param event {Event} input change event.
+     */
+    setTag(event) {
+        const {data, current} = this.props;
+        const tag = event.target.value;
+        this.setMediaActions(data.file, current, "tag", tag);
+    }
+
+
     render() {
         const {data, current, actions, approvedTypes} = this.props;
-        const {remove, show, credits} = this.state;
+        const {remove, show, credits, tag} = this.state;
         const {type, size} = data.file;
         const isApprovedType = current || !isInitialized(approvedTypes) || approvedTypes.includes(type);
         const isApprovedSize = current || size <= 5000000;
@@ -89,8 +101,12 @@ class MediaThumbnail extends React.Component {
                     <i className="icon-play flex-row-centered"/>
                 </>}
             </div>
-            {actions && <input type="text" placeholder="Add Credits..." defaultValue={credits}
-                               onChange={this.setCredits.bind(this)}/>}
+            {actions && <>
+                <input type="text" placeholder="Add Tag..." defaultValue={tag}
+                       onChange={this.setTag.bind(this)}/>
+                <input type="text" placeholder="Add Credits..." defaultValue={credits}
+                       onChange={this.setCredits.bind(this)}/>
+            </>}
         </div>
     }
 }

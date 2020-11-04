@@ -20,10 +20,9 @@ function EditContact(props) {
      */
     function publish(event) {
         event.preventDefault();
-        const controller = "update_contact_info";
         const form = new FormData(event.target);
         // Sends form to server, if succeeds updates JSON, otherwise displays error message
-        postForm(controller, form)
+        postForm("update_contact_info", form)
             .then(response => setParentState({...response}))
             .catch(error => window.alert(`ERROR\nCould not update contact information.\n${error}`))
             .finally(() => setRedirect(true));

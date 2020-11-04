@@ -4,9 +4,11 @@ $ROOT = $_SERVER["DOCUMENT_ROOT"];
 
 require_once "$ROOT/modules/utils/Data.php";
 require_once "$ROOT/modules/utils/files/ContactImage.php";
+require_once "$ROOT/modules/utils/files/FileUtils.php";
 
-use Utils\Files\ContactImage;
 use Utils\Data;
+use Utils\Files\ContactImage;
+use Utils\Files\FileUtils;
 
 // Fetch and re-arrange data from $_POST and $_FILES.
 $info = Data::getJSON("info");
@@ -29,10 +31,14 @@ $update = [
 
 // Write new image if set.
 if (isset($_FILES["image"]) && $_FILES["image"]["error"] === 0) {
+    $metaData = ["id" => "", "gallery" => "", "title" => "Contact Image"];
     $approvedTypes = ["image/png", "image/jpeg"];
-    if (in_array($_FILES["image"]["type"], $approvedTypes)) {
-        $image = new ContactImage($_FILES["image"]);
+    try {
+        $image = new ContactImage($_FILES["image"], $metaData, true, "", "", $approvedTypes);
         $update["image"] = $image->write();
+        FileUtils::deleteImage($info["image"]["src"]);
+    } catch (Exception $e) {
+        $update["image"] = $info["image"];
     }
 }
 

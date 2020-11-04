@@ -61,7 +61,7 @@ const PATH = {
      * @return {string} reformatted path.
      */
     JSON(path) {
-        return `/data/${path}.json`;
+        return `/data/${path}.json?v2`;
     },
     /**
      * Reformat PHP controller path based on given name, and constant path.

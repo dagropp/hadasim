@@ -28,20 +28,15 @@ export function useGalleryGifAnimation(items) {
 
 /**
  * Sets gif animation for each site section.
+ * @param quantity {number} Amount of GIFs. Default 2.
  * @return {array}
  */
-export function setSectionGifAnimation() {
+export function setSectionGifAnimation(quantity = 2) {
     const path = "/assets/images/icons/";
-    const sources = ["line_v2", "line_v4", "line_v5", "line_v6"];
+    const sources = ["dot_v1", "dot_v2", "dot_v3", "line_v1", "line_v2", "line_v3", "line_v4", "line_v5", "line_v6"];
     const result = [];
-    for (let i = 0; i <= 2; i++) {
-        while (true) {
-            const src = setSrc();
-            if (!result.includes(src)) {
-                result[i] = src;
-                break;
-            }
-        }
+    for (let i = 0; i < quantity; i++) {
+        result[i] = setSrc();
     }
     return result;
 

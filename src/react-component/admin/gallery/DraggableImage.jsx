@@ -15,6 +15,7 @@ class DraggableImage extends React.Component {
         }
         this.dragIn = this.dragIn.bind(this);
         this.dragOut = this.dragOut.bind(this);
+        this.imageSizes = ["tiny", "small", "normal", "large", "full"];
     }
 
     /**
@@ -80,7 +81,9 @@ class DraggableImage extends React.Component {
      */
     enlargeImage() {
         const {items, item, index, updateItems} = this.props;
-        items[index].size = item.size === "normal" ? "large" : "normal";
+        const current = this.imageSizes.indexOf(item.size);
+        const newIndex = current === this.imageSizes.length - 1 ? current : current + 1;
+        items[index].size = this.imageSizes[newIndex];
         updateItems(items);
     }
 
@@ -89,46 +92,52 @@ class DraggableImage extends React.Component {
      */
     reduceImage() {
         const {items, item, index, updateItems} = this.props;
-        items[index].size = item.size === "normal" ? "small" : "normal";
+        const current = this.imageSizes.indexOf(item.size);
+        const newIndex = current === 0 ? current : current - 1;
+        items[index].size = this.imageSizes[newIndex];
         updateItems(items);
     }
 
     render() {
         const {dragEnter} = this.state;
         const {item} = this.props;
-        return <div className={`draggable-wrapper ${dragEnter ? "drag-enter" : ""}`}>
-            <div className={`thumbnail gallery-item ${item.orientation} ${item.size}`}>
-                <div className="actions">
-                    <i className={`icon-minus flex-row-centered ${item.size === "small" ? "disabled" : ""}`}
-                       title="Reduce image size"
-                       onClick={item.size === "small" ? null : this.reduceImage.bind(this)}/>
-                    <i className={`icon-plus flex-row-centered ${item.size === "large" ? "disabled" : ""}`}
-                       title="Enlarge image size"
-                       onClick={item.size === "large" ? null : this.enlargeImage.bind(this)}/>
-                    <i className="icon-trash flex-row-centered"
-                       title="Remove from gallery"
-                       onClick={this.removeItem.bind(this)}/>
-                </div>
-                {item.type === "image"
-                    ? <img className="item-drag" src={item.src + "=small.jpg"} alt="" draggable
-                           onDragStart={this.drag.bind(this)}
-                           onDragEnter={this.dragIn} onDragOver={this.dragIn}
-                           onDragLeave={this.dragOut} onDragEnd={this.dragOut}
-                           onDrop={this.drop.bind(this)}/>
-                    : <>
-                        <video className="item-drag" controls={false} draggable
+        return <React.Fragment>
+            {item.size === "full" && <div className="line-spacer"/>}
+            <div className={`draggable-wrapper ${dragEnter ? "drag-enter" : ""}`}>
+                <div className={`thumbnail gallery-item ${item.orientation} ${item.size}`}>
+                    <div className="actions">
+                        <i className={`icon-minus flex-row-centered ${item.size === this.imageSizes[0] ? "disabled" : ""}`}
+                           title="Reduce image size"
+                           onClick={item.size === this.imageSizes[0] ? null : this.reduceImage.bind(this)}/>
+                        <i className={`icon-plus flex-row-centered ${item.size === this.imageSizes[this.imageSizes.length - 1] ? "disabled" : ""}`}
+                           title="Enlarge image size"
+                           onClick={item.size === this.imageSizes[this.imageSizes.length - 1] ? null : this.enlargeImage.bind(this)}/>
+                        <i className="icon-trash flex-row-centered"
+                           title="Remove from gallery"
+                           onClick={this.removeItem.bind(this)}/>
+                    </div>
+                    {item.type === "image"
+                        ? <img className="item-drag" src={item.src + "=small.jpg"} alt="" draggable
                                onDragStart={this.drag.bind(this)}
                                onDragEnter={this.dragIn} onDragOver={this.dragIn}
                                onDragLeave={this.dragOut} onDragEnd={this.dragOut}
-                               onDrop={this.drop.bind(this)}
-                               src={item.src}>
-                            <p>Your browser doesn't support embedded videos</p>
-                        </video>
-                        <i className="icon-play flex-row-centered"/>
-                    </>
-                }
+                               onDrop={this.drop.bind(this)}/>
+                        : <>
+                            <video className="item-drag" controls={false} draggable
+                                   onDragStart={this.drag.bind(this)}
+                                   onDragEnter={this.dragIn} onDragOver={this.dragIn}
+                                   onDragLeave={this.dragOut} onDragEnd={this.dragOut}
+                                   onDrop={this.drop.bind(this)}
+                                   src={item.src}>
+                                <p>Your browser doesn't support embedded videos</p>
+                            </video>
+                            <i className="icon-play flex-row-centered"/>
+                        </>
+                    }
+                </div>
             </div>
-        </div>
+            {item.size === "full" && <div className="line-spacer"/>}
+        </React.Fragment>
     }
 }
 

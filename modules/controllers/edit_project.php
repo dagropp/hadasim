@@ -44,6 +44,7 @@ foreach ($mediaActions as $key => $action) {
         }
         $item["show"] = $action["show"];
         $item["credits"] = $action["credits"];
+        $item["tag"] = $action["tag"];
         $gallery[$section]["items"][$index] = $item;
     }
 }
@@ -54,6 +55,7 @@ if ($files) {
     foreach ($files as $index => $file) {
         $show = true;
         $credits = "";
+        $tag = "";
         $name = $file["name"];
         $key = base64_encode($name);
         if (isset($mediaActions[$key])) {
@@ -61,15 +63,16 @@ if ($files) {
             if ($actions["remove"]) continue;
             $show = $actions["show"];
             $credits = $actions["credits"];
+            $tag = $actions["tag"];
         }
         try {
             if (StringUtils::startsWith($file["type"], "image")) {
                 $approvedTypes = ["image/png", "image/jpeg"];
-                $item = new ProjectImage($file, $project, $show, $credits, $approvedTypes);
+                $item = new ProjectImage($file, $project, $show, $credits, $tag, $approvedTypes);
             } else if (StringUtils::startsWith($file["type"], "video")) {
                 $approvedTypes = ["video/mp4"];
                 $maxSize = 5000000;
-                $item = new ProjectVideo($file, $project, $show, $credits, $approvedTypes, $maxSize);
+                $item = new ProjectVideo($file, $project, $show, $credits, $tag, $approvedTypes, $maxSize);
             }
         } catch (Exception $e) {
             continue;
